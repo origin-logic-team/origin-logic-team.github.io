@@ -3,72 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Origin Logic Team | 官方入口</title>
+    <title>Origin Logic Team | 啟源邏輯實驗室</title>
     <style>
+        /* --- E-ink Style Layer --- */
         :root {
-            --powder-blue: #B0E0E6;
-            --powder-pink: #FFB6C1;
-            --text-color: #555;
+            --e-paper-white: #F4F4F4;
+            --e-paper-black: #1A1A1A;
+            --brick-red: #B22222;
+            --olive-green: #556B2F;
+            --slate-blue: #5F9EA0;
         }
+
         body {
-            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--e-paper-white);
+            color: var(--e-paper-black);
+            font-family: "Courier New", Courier, monospace;
             margin: 0;
+            padding: 5vw 2vw;
             display: flex;
             justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            background: linear-gradient(135deg, var(--powder-blue) 0%, var(--powder-pink) 100%);
-            color: var(--text-color);
         }
-        .container {
-            background: rgba(255, 255, 255, 0.85);
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            text-align: center;
-            max-width: 500px;
-            backdrop-filter: blur(10px);
+
+        #theater-stage {
+            width: 100%;
+            max-width: 800px;
+            border: 2px solid var(--e-paper-black);
+            padding: 30px;
+            box-sizing: border-box;
+            position: relative;
         }
-        h1 { color: #444; margin-bottom: 0.5rem; }
-        p { line-height: 1.6; }
-        .btn-group {
+
+        header {
+            border-bottom: 3px double var(--e-paper-black);
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+        }
+
+        header h1 { margin: 0; font-size: 1.8rem; letter-spacing: 2px; }
+        header p { margin: 10px 0 0 0; font-size: 0.9rem; opacity: 0.8; }
+
+        /* --- Actors (App Entry) --- */
+        .app-entry {
+            border: 1px solid var(--e-paper-black);
+            margin-bottom: 25px;
+            padding: 20px;
             display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 2rem;
+            align-items: center;
         }
-        .btn {
+
+        .u-icon {
+            font-size: 2.2rem;
+            width: 60px;
+            text-align: center;
+            user-select: none;
+            margin-right: 20px;
+        }
+
+        .app-info { flex-grow: 1; }
+        .app-info h3 { margin: 0; font-size: 1.1rem; }
+        .app-status { font-size: 0.8rem; margin-top: 6px; font-weight: bold; }
+
+        /* --- Sliy's Nav Links --- */
+        .action-group { display: flex; flex-direction: column; gap: 8px; }
+        .action-group a {
+            color: var(--e-paper-black);
             text-decoration: none;
-            padding: 12px 20px;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid var(--e-paper-black);
+            padding: 4px 12px;
+            font-size: 0.75rem;
+            text-align: center;
         }
-        .btn-primary { background-color: var(--powder-blue); color: #444; }
-        .btn-secondary { background-color: var(--powder-pink); color: #444; }
-        .btn:hover { transform: translateY(-3px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
-        .footer { margin-top: 2rem; font-size: 0.8rem; opacity: 0.7; }
+
+        /* Color Management by Ken */
+        .c-brick-red { color: var(--brick-red); }
+        .c-olive-green { color: var(--olive-green); }
+        .c-slate-blue { color: var(--slate-blue); }
+
+        footer {
+            margin-top: 60px;
+            font-size: 0.75rem;
+            border-top: 1px solid var(--e-paper-black);
+            padding-top: 20px;
+            line-height: 1.5;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Origin Logic Team</h1>
-        <p>專注於極簡功能與邏輯美學的開發團隊</p>
-        <hr style="border: 0; border-top: 1px solid #ddd; margin: 1.5rem 0;">
-        
-        <div class="works">
-            <h3>🌸 核心作品：Sily Timer</h3>
-            <p>純粹的粉系計時體驗，支援滅屏倒數。</p>
-            <div class="btn-group">
-                <a href="#" class="btn btn-primary">下載 APK (Android)</a>
-                <a href="#" class="btn btn-primary">下載 EXE (Windows)</a>
-            </div>
-        </div>
 
-        <div class="footer">
-            Copyright © 2026 Origin Logic Team.<br>
-            此為非商標之獨立開發專案小組。
+<div id="theater-stage">
+    <header>
+        <h1>ORIGIN LOGIC TEAM</h1>
+        <p>PROTOCOL 2.1 | DISPATCHER_MODE_STATIC</p>
+    </header>
+
+    <main id="ken_APP_LIST">
+        <p>LOADING_SYSTEM_RESOURCES...</p>
+    </main>
+
+    <footer>
+        <div style="margin-bottom: 10px;">
+            NODE_CLUSTER: [olt:155] [ws:126] [backup:20]<br>
+            OS_ENV: ARCH_LINUX_HEADLESS
         </div>
-    </div>
+        <div>© 2026 ORIGIN LOGIC TEAM. ALL ASSETS ENCRYPTED OR ISOLATED.</div>
+    </footer>
+</div>
+
+<script>
+    /* --- 劇組人員實作 (Staff Implementation) --- */
+
+    // 【場務員】tokine_: 數據加載與舞台渲染
+    async function tokine_BootTheater() {
+        const stage = document.getElementById('ken_APP_LIST');
+        try {
+            const response = await fetch('./jan_APP_REGISTRY.json');
+            if (!response.ok) throw new Error('ERR_DATA_STREAM_FAILED');
+            const data = await response.json();
+            
+            stage.innerHTML = '';
+            data.apps.forEach(app => {
+                const entry = document.createElement('div');
+                entry.className = 'app-entry';
+                entry.innerHTML = `
+                    <div class="u-icon ${ken_SetTheme(app.u_theme)}">${app.u_char}</div>
+                    <div class="app-info">
+                        <h3>${app.name}</h3>
+                        <div class="app-status">[${app.status}] | DEVICE: ${app.device}</div>
+                    </div>
+                    <div class="action-group">
+                        <a href="${sliy_Route(app.repo_path, 'log')}">LOG_INDEX</a>
+                        <a href="${sliy_Route(app.repo_path, 'bin')}">GET_BINARY</a>
+                    </div>
+                `;
+                stage.appendChild(entry);
+            });
+        } catch (e) {
+            stage.innerHTML = `<div class="c-brick-red">SYSTEM_HALT: ${e.message}</div>`;
+        }
+    }
+
+    // 【引導員】sliy_: 路徑分流邏輯
+    function sliy_Route(repo, mode) {
+        const org = "origin-logic-team";
+        if (mode === 'bin') return `https://github.com/${org}/${repo}/releases`;
+        return `https://${org}.github.io/${repo}/`;
+    }
+
+    // 【燈光師】ken_: 視覺套色
+    function ken_SetTheme(t) {
+        const themes = { "brick-red": "c-brick-red", "olive-green": "c-olive-green", "slate-blue": "c-slate-blue" };
+        return themes[t] || "c-slate-blue";
+    }
+
+    window.onload = tokine_BootTheater;
+</script>
+
 </body>
 </html>
