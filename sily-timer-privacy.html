@@ -4,35 +4,94 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy | Sily Timer</title>
-    <style>
-        :root {
-            --powder-blue: #B2EBF2;
-            --deep-blue: #006064;
-            --font-main: 'Noto Sans TC', sans-serif;
-        }
-        body {
-            background-color: var(--powder-blue);
-            color: var(--deep-blue);
-            font-family: var(--font-main);
-            line-height: 1.6;
-            margin: 0;
-            padding: 40px 20px;
-            display: flex;
-            justify-content: center;
-        }
-        .container {
-            max-width: 700px;
-            background: rgba(255, 255, 255, 0.3);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-        }
-        h1 { letter-spacing: 4px; border-bottom: 2px solid var(--deep-blue); padding-bottom: 10px; text-align: center; }
-        h2 { margin-top: 30px; font-size: 1.2rem; border-left: 4px solid var(--deep-blue); padding-left: 10px; }
-        p, li { font-size: 0.95rem; opacity: 0.85; margin-bottom: 10px; }
-        .lang-en { font-style: italic; margin-top: 5px; display: block; color: #004d40; }
-        footer { margin-top: 50px; font-size: 0.8rem; text-align: center; opacity: 0.6; border-top: 1px dashed var(--deep-blue); padding-top: 20px; }
-    </style>
+<style>
+    :root {
+        --e-ink-bg: #fdfdfd;      /* 類紙張色 */
+        --e-ink-black: #1a1a1a;   /* 濃墨色 */
+        --e-ink-gray: #757575;    /* 灰階 */
+        --accent-blue: #b2ebf2;   /* 實驗室粉藍預設 */
+        --font-main: "Courier New", Courier, monospace, "Noto Sans TC";
+    }
+
+    body {
+        background-color: var(--e-ink-bg);
+        color: var(--e-ink-black);
+        font-family: var(--font-main);
+        line-height: 1.7;
+        margin: 0;
+        padding: 40px 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .container {
+        max-width: 800px;
+        width: 100%;
+        background: #fff;
+        padding: 50px;
+        border: 2px solid var(--e-ink-black);
+        /* E-ink 典型的硬陰影 */
+        box-shadow: 8px 8px 0px var(--e-ink-black);
+    }
+
+    h1 { 
+        font-size: 2.2rem;
+        letter-spacing: 6px; 
+        border: 3px solid var(--e-ink-black); 
+        padding: 15px; 
+        text-align: center;
+        background-color: var(--accent-blue); /* 標題點綴粉藍 */
+        margin-bottom: 40px;
+    }
+
+    h2 { 
+        margin-top: 40px; 
+        font-size: 1.3rem; 
+        background: var(--e-ink-black);
+        color: #fff;
+        display: inline-block;
+        padding: 5px 15px;
+        transform: skew(-5deg); /* 增加一點點設計感 */
+    }
+
+    p, li { 
+        font-size: 1rem; 
+        margin-bottom: 15px; 
+    }
+
+    ul {
+        border-left: 1px dashed var(--e-ink-black);
+        padding-left: 25px;
+    }
+
+    strong {
+        background: linear-gradient(transparent 70%, var(--accent-blue) 0%);
+    }
+
+    .lang-en { 
+        font-style: normal; 
+        display: block; 
+        color: var(--e-ink-gray); 
+        font-size: 0.85rem;
+        margin-top: 2px;
+        border-bottom: 1px dotted #ccc;
+        padding-bottom: 10px;
+    }
+
+    footer { 
+        margin-top: 60px; 
+        font-size: 0.8rem; 
+        text-align: left; 
+        border-top: 4px double var(--e-ink-black); 
+        padding-top: 20px;
+    }
+
+    /* 手機適應 */
+    @media (max-width: 600px) {
+        .container { padding: 25px; border-width: 1px; box-shadow: 4px 4px 0px var(--e-ink-black); }
+        h1 { font-size: 1.5rem; }
+    }
+</style>
 </head>
 <body>
     <div class="container">
