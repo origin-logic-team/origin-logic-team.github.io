@@ -8,7 +8,7 @@
       "name": "Sily Timer",
       "status": "Stable 1.0.0",
       "device": "android",
-      "repo_path": "Sily_Timer"
+      "repo_path": "sily_timer"
     },
     {
       "id": "Sily002",
@@ -17,7 +17,7 @@
       "name": "Sily Listener",
       "status": "Debuging",
       "device": "android",
-      "repo_path": "Sily_Listener"
+      "repo_path": "sily_listener"
     }
   ]
 }
