@@ -2,22 +2,22 @@
   "last_sync": "2026-02-24",
   "apps": [
     {
-      "id": "app_01",
+      "id": "Sily001",
       "u_char": "▚",
       "u_theme": "brick-red",
-      "name": "CORE_COMPILER",
-      "status": "lis_STABLE",
-      "device": "olt(155)",
-      "repo_path": "core-compiler"
+      "name": "Sily Timer",
+      "status": "Stable 1.0.0",
+      "device": "android",
+      "repo_path": "Sily_Timer"
     },
     {
-      "id": "app_02",
+      "id": "Sily002",
       "u_char": "⚙",
       "u_theme": "olive-green",
-      "name": "THEATER_MONITOR",
-      "status": "lis_ACTIVE",
-      "device": "ws(126)",
-      "repo_path": "theater-monitor"
+      "name": "Sily Listener",
+      "status": "Debuging",
+      "device": "android",
+      "repo_path": "Sily_Listener"
     }
   ]
 }
