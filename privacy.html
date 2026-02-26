@@ -6,43 +6,167 @@
     <title>Privacy Policy | Origin Logic Team</title>
     <style>
         :root {
-            --paper: #fdfdfd; --ink: #1a1a1a; --accent: #b2ebf2; 
+            --paper: #f0f0f0; 
+            --container-bg: #fafafa;
+            --ink: #1a1a1a; 
+            --accent-dark: #222222;
+            --font-main: "Courier New", "Noto Sans TC", monospace;
         }
-        body { background: var(--paper); color: var(--ink); font-family: "Courier New", "Noto Sans TC", monospace; line-height: 1.7; margin: 0; padding: 40px 20px; display: flex; justify-content: center; }
-        .container { max-width: 750px; width: 100%; background: #fff; padding: 40px; border: 2px solid var(--ink); box-shadow: 8px 8px 0px var(--ink); }
-        h1 { border: 2px solid var(--ink); padding: 15px; text-align: center; background: var(--accent); letter-spacing: 4px; font-size: 1.8rem; margin-bottom: 30px; }
-        p { margin-bottom: 15px; }
-        ul { border-left: 1px dashed var(--ink); padding-left: 25px; margin-bottom: 25px; }
-        .opt-block { font-size: 0.95rem; border-left: 4px solid var(--ink); padding: 10px 15px; margin-top: 15px; background: #f9f9f9; }
-        .compliance-note { background: #eee; padding: 15px; border: 1px solid var(--ink); font-size: 0.9rem; margin-top: 30px; }
-        footer { margin-top: 50px; font-size: 0.85rem; border-top: 4px double var(--ink); padding-top: 20px; }
-        .sp-footer { margin-top: 10px; font-style: italic; color: #555; border-left: 2px solid var(--accent); padding-left: 10px; }
+        
+        body { 
+            background: var(--paper); 
+            color: var(--ink); 
+            font-family: var(--font-main); 
+            line-height: 1.7; 
+            margin: 0; 
+            padding: 40px 20px; 
+            display: flex; 
+            flex-direction: column;
+            align-items: center; 
+        }
+
+        .top-nav {
+            max-width: 800px;
+            width: 100%;
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        
+        .back-link {
+            text-decoration: none;
+            color: var(--slate-blue);
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }        
+
+        .container { 
+            max-width: 800px; 
+            width: 100%; 
+            background: var(--container-bg); 
+            padding: 40px; 
+            border: 1px solid #ccc; 
+            box-sizing: border-box;
+        }
+        
+        h1 { 
+            padding: 10px; 
+            text-align: center;
+            background: transparent;
+            letter-spacing: 4px;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        h2 {
+            background-color: #696969;
+            color: #ffffff;
+            display: inline-block;
+            padding: 6px 18px;
+            margin: 30px 0 15px 0;
+            font-family: var(--font-main);
+            font-size: 1.1rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transform: skew(-10deg);
+            backface-visibility: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        p { margin-bottom: 15px; font-size: 0.95rem; }
+        
+        ul { 
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 25px; 
+        }
+        
+        li {
+            padding-left: 20px;
+            position: relative;
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        li::before {
+            content: "-";
+            position: absolute;
+            left: 0;
+        }
+
+        .opt-block { 
+            font-size: 0.9rem; 
+            border-top: 1px dashed #ccc;
+            padding-top: 15px;
+            margin-top: 15px; 
+            color: #444;
+        }
+
+        .compliance-note { 
+            border: 1px solid #ddd;
+            padding: 15px; 
+            font-size: 0.85rem; 
+            margin-top: 40px;
+            background: #fdfdfd;
+            color: #666;
+        }
+
+        footer { 
+            margin-top: 50px; 
+            font-size: 0.8rem; 
+            text-align: center;
+            color: #888;
+            padding-top: 20px; 
+        }
+
+        .divider {
+            border-bottom: 1px solid var(--ink);
+            margin-bottom: 30px;
+        }
+
+        @media (max-width: 600px) {
+            .container { padding: 20px; }
+            h1 { font-size: 1.4rem; }
+        }
     </style>
 </head>
 <body>
+    <div class="top-nav"><a href="https://origin-logic-team.github.io" class="back-link">← BACK TO HUB</a></div>
+
     <div class="container">
         <h1 id="display-name">APP_NAME</h1>
-        <p style="text-align: center;"><strong>隱私權政策 | Privacy Policy</strong></p>
+        <div class="divider"></div>
 
         <section id="core-a1">
+            <h2>01. 服務概述 | OVERVIEW</h2>
             <p>本服務由 <span class="app-title-text"></span> 專案團隊 (Origin Logic) 開發維護。我們非常重視您的隱私，本政策旨在說明我們如何處理資訊。</p>
-            <p><strong><span class="app-title-text"></span></strong> 是一款純本地運作的工具。我們不會收集、上傳或傳輸任何個人資料。</p>
+            <p><strong><span class="app-title-text"></span></strong> 是一款純本地運作的工具。我們聲明：<strong>本程式不會收集、上傳或傳輸任何個人資料。</strong></p>
+
+            <h2>02. 數據處理規範 | DATA HANDLING</h2>
             <ul>
-                <li><strong>功能數據 (Functional Data)</strong>：僅儲存在您裝置的 Local Storage 或本地數據庫中。</li>
-                <li><strong>本地儲存</strong>：所有偏好設定均透過標準本地存儲技術保留在您的裝置上。刪除應用程式將同步移除這些數據。</li>
-                <li><strong>無追蹤</strong>：本應用程式不包含任何第三方廣告追蹤或分析套件 (No Analytics, No Ads)。</li>
+                <li><strong>功能數據 (Functional Data)</strong>：僅儲存在您裝置的 Local Storage 或本地數據庫中，作為邏輯運算使用。</li>
+                <li><strong>本地儲存機制</strong>：所有偏好設定（如計時參數、能量點數）均保留在您的裝置上。刪除應用程式將同步移除所有數據。</li>
+                <li><strong>純淨環境</strong>：本應用程式不包含任何第三方廣告追蹤或數據分析套件 (No Analytics, No Ads)。</li>
             </ul>
         </section>
 
         <div id="optional-b1"></div>
 
         <div class="compliance-note">
-            <strong>[合規保障]</strong> 本應用程式由 Origin Logic Team 獨立製作，開發過程中所使用之第三方技術、字型及圖形資源均經過審查，確保符合商用授權規範，保護使用者免於版權風險。
+            <strong>[合規保障]</strong> 本應用程式由 Origin Logic Team 獨立製作，開發過程中所使用之第三方技術、字型及圖形資源均經過 License 查核，確保符合商用授權規範。
+        </div>
+        
+        <div class="compliance-note">
+            <strong>[支持作者]</strong> 本專案接受經由第三方平台的自由贊助，相關行為由第三方平台處理，本程式不接觸亦不儲存您的任何支付數據。
         </div>
 
         <footer>
-            <div id="sp-area"></div>
-            <p>若對本政策有任何疑問，請透過 GitHub Issue 與我們聯繫。</p>
+            <p>Origin Logic Team | Visualized via Unicode Standard</p>
             <p>&copy; 2026 Origin Logic Team. All Rights Reserved.</p>
         </footer>
     </div>
@@ -53,40 +177,36 @@
         const opts = urlParams.get('opt')?.split(',') || [];
 
         // 渲染 App 名稱
-        document.getElementById('display-name').innerText = app.toUpperCase();
+        document.getElementById('display-name').innerText = app.toUpperCase().replace(/_/g, ' ');
         document.querySelectorAll('.app-title-text').forEach(el => el.innerText = app);
 
-        // 選配積木庫
+        // 選配積木庫 (已移除 SP 判斷，回歸純粹組件宣告)
         const optLibrary = {
             'notif': '＊權限說明：通知權限僅用於任務完成或到期時之即時提醒，確保背景運作之功能完整性。',
             'file':  '＊權限說明：存儲權限僅用於本地數據備份與設定讀取，不涉及您的私人媒體檔案。',
             'noto':  '＊版權聲明：本工具採用之 Noto 系列字型與圖標分別遵循 SIL Open Font License 1.1 規範，技術呈現符合原權利人之版權聲明。',
             'flu':   '＊技術聲明：本工具基於 Flutter 框架開發，所引用之核心組件分別遵循 BSD、MIT 及 Apache 2.0 等合法商用授權規範，技術架構符合原創作者之版權聲明。',
             'ray':   '＊技術聲明：本工具基於 Raylib 構建，相關圖形渲染組件遵循 zlib/libpng 等合法商用授權規範，技術架構符合原創作者之版權聲明。',
-            'mit':   '＊授權聲明：本程式部分技術組件遵循 MIT 授權協議，相關引用細節符合原作者之權利要求與商用規範。',
-            'sp':    '＊支持與贊助：本專案接受經由第三方平台的自由贊助，相關行為由第三方平台處理，本程式不接觸亦不儲存您的任何支付數據。'
+            'mit':   '＊授權聲明：本程式部分技術組件遵循 MIT 授權協議，相關引用細節符合原作者之權利要求與商用規範。'
         };
 
         const optContainer = document.getElementById('optional-b1');
-        const spArea = document.getElementById('sp-area');
 
-        opts.forEach(key => {
-            if (optLibrary[key]) {
-                if (key === 'sp') {
-                    // sp 放入 footer
-                    const p = document.createElement('p');
-                    p.className = 'sp-footer';
-                    p.innerText = optLibrary[key];
-                    spArea.appendChild(p);
-                } else {
-                    // 其他放入 B1 區塊
+        // 如果有選配，增加一個標題區分
+        if (opts.length > 0 && opts[0] !== "") {
+            const extraTitle = document.createElement('h2');
+            extraTitle.innerText = "03. 其餘組件聲明 | COMPONENTS";
+            optContainer.appendChild(extraTitle);
+            
+            opts.forEach(key => {
+                if (optLibrary[key]) {
                     const div = document.createElement('div');
                     div.className = 'opt-block';
                     div.innerText = optLibrary[key];
                     optContainer.appendChild(div);
                 }
-            }
-        });
+            });
+        }
     </script>
 </body>
 </html>
