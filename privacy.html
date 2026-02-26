@@ -9,8 +9,8 @@
             --paper: #f0f0f0; 
             --container-bg: #fafafa;
             --ink: #1a1a1a; 
-            --accent-dark: #222222;
-            --font-main: "Courier New", "Noto Sans TC", monospace;
+            --accent-blue: #5fb9c3;
+            --font-main: "Courier New", "Noto Sans TC", "Noto Sans JP", monospace;
         }
         
         body { 
@@ -25,25 +25,33 @@
             align-items: center; 
         }
 
-        .top-nav {
+        /* OLT 通用導航組件 */
+        .olt-nav-container {
             max-width: 800px;
             width: 100%;
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-        }
-        
-        .back-link {
-            text-decoration: none;
-            color: var(--slate-blue);
-            font-size: 0.9rem;
-            font-weight: bold;
+            margin-bottom: 12px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .back-link:hover {
-            text-decoration: underline;
-        }        
+        .olt-back-link {
+            font-size: 0.9rem;
+            color: var(--accent-blue);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+        }
+
+        .olt-back-link::before { content: "← "; margin-right: 4px; }
+
+        .olt-nav-right {
+            font-size: 0.9rem;
+            color: #666;
+            letter-spacing: 2px;
+        }
 
         .container { 
             max-width: 800px; 
@@ -69,8 +77,7 @@
             display: inline-block;
             padding: 6px 18px;
             margin: 30px 0 15px 0;
-            font-family: var(--font-main);
-            font-size: 1.1rem;
+            font-size: 1.0rem;
             font-weight: bold;
             letter-spacing: 1px;
             transform: skew(-10deg);
@@ -78,42 +85,50 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        p { margin-bottom: 15px; font-size: 0.95rem; }
-        
-        ul { 
-            list-style: none;
-            padding-left: 0;
-            margin-bottom: 25px; 
+        .lang-block {
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #eee;
         }
+
+        .lang-tag {
+            font-size: 0.7rem;
+            background: #ddd;
+            padding: 1px 5px;
+            margin-right: 8px;
+            vertical-align: middle;
+            color: #333;
+        }
+
+        p { margin-bottom: 8px; font-size: 0.9rem; }
+        
+        ul { list-style: none; padding-left: 0; margin-bottom: 15px; }
         
         li {
             padding-left: 20px;
             position: relative;
             margin-bottom: 8px;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
+            color: #444;
         }
 
-        li::before {
-            content: "-";
-            position: absolute;
-            left: 0;
-        }
+        li::before { content: "-"; position: absolute; left: 0; }
 
         .opt-block { 
-            font-size: 0.9rem; 
-            border-top: 1px dashed #ccc;
-            padding-top: 15px;
+            font-size: 0.85rem; 
+            border-left: 3px solid #696969;
+            padding: 10px 15px;
             margin-top: 15px; 
-            color: #444;
+            background: #f1f1f1;
         }
 
         .compliance-note { 
             border: 1px solid #ddd;
             padding: 15px; 
-            font-size: 0.85rem; 
-            margin-top: 40px;
+            font-size: 0.8rem; 
+            margin-top: 20px;
             background: #fdfdfd;
-            color: #666;
+            color: #555;
         }
 
         footer { 
@@ -124,45 +139,57 @@
             padding-top: 20px; 
         }
 
-        .divider {
-            border-bottom: 1px solid var(--ink);
-            margin-bottom: 30px;
-        }
+        .divider { border-bottom: 1px solid var(--ink); margin-bottom: 30px; }
 
         @media (max-width: 600px) {
             .container { padding: 20px; }
             h1 { font-size: 1.4rem; }
+            .olt-nav-container { flex-direction: column; align-items: flex-start; gap: 8px; }
         }
     </style>
 </head>
 <body>
-    <div class="top-nav"><a href="https://origin-logic-team.github.io" class="back-link">← BACK TO HUB</a></div>
+    <div class="olt-nav-container">
+        <a href="https://origin-logic-team.github.io/" class="olt-back-link">Back to Hub</a>
+        <div class="olt-nav-right">ZH | EN | JP</div>
+    </div>
 
     <div class="container">
         <h1 id="display-name">APP_NAME</h1>
         <div class="divider"></div>
 
-        <section id="core-a1">
-            <h2>01. 服務概述 | OVERVIEW</h2>
-            <p>本服務由 <span class="app-title-text"></span> 專案團隊 (Origin Logic) 開發維護。我們非常重視您的隱私，本政策旨在說明我們如何處理資訊。</p>
-            <p><strong><span class="app-title-text"></span></strong> 是一款純本地運作的工具。我們聲明：<strong>本程式不會收集、上傳或傳輸任何個人資料。</strong></p>
+        <section>
+            <h2>01. 服務概述 | OVERVIEW | 概要</h2>
+            <div class="lang-block">
+                <p><span class="lang-tag">ZH</span>本服務由 <span class="app-title-text"></span> 專案團隊 (Origin Logic) 開發維護。本程式為純本地運作工具，不會收集、上傳或傳輸任何個人資料。</p>
+                <p><span class="lang-tag">EN</span>This service is developed by <span class="app-title-text"></span> (Origin Logic). This application operates purely locally and does not collect, upload, or transmit any personal data.</p>
+                <p><span class="lang-tag">JP</span>本サービスは <span class="app-title-text"></span> (Origin Logic) によって開発されています。本アプリは完全にローカルで動作し、個人情報の収集、アップロード、送信は行いません。</p>
+            </div>
+        </section>
 
-            <h2>02. 數據處理規範 | DATA HANDLING</h2>
-            <ul>
-                <li><strong>功能數據 (Functional Data)</strong>：僅儲存在您裝置的 Local Storage 或本地數據庫中，作為邏輯運算使用。</li>
-                <li><strong>本地儲存機制</strong>：所有偏好設定（如計時參數、能量點數）均保留在您的裝置上。刪除應用程式將同步移除所有數據。</li>
-                <li><strong>純淨環境</strong>：本應用程式不包含任何第三方廣告追蹤或數據分析套件 (No Analytics, No Ads)。</li>
-            </ul>
+        <section>
+            <h2>02. 數據規範 | DATA | データ</h2>
+            <div class="lang-block">
+                <ul>
+                    <li><span class="lang-tag">ZH</span><strong>本地儲存</strong>：偏好設定均儲存於裝置區域空間，不含任何追蹤套件或外部廣告。</li>
+                    <li><span class="lang-tag">EN</span><strong>Local Storage</strong>: Preferences are stored in device local storage; contains no tracking or ads.</li>
+                    <li><span class="lang-tag">JP</span><strong>ローカル保存</strong>: 設定は端末のローカルストレージに保存されます。追跡や広告は含まれません。</li>
+                </ul>
+            </div>
         </section>
 
         <div id="optional-b1"></div>
 
         <div class="compliance-note">
-            <strong>[合規保障]</strong> 本應用程式由 Origin Logic Team 獨立製作，開發過程中所使用之第三方技術、字型及圖形資源均經過 License 查核，確保符合商用授權規範。
+            <p><strong>[ZH] 授權合規</strong>：本專案引用之資源均經過 License 查核，確保符合商用授權規範。</p>
+            <p><strong>[EN] Compliance</strong>: All resources used in this project have been checked for licenses to ensure commercial compliance.</p>
+            <p><strong>[JP] コンプライアンス</strong>: 本プロジェクトで使用されるリソースは、商用利用のライセンス適合性を確認済みです。</p>
         </div>
         
         <div class="compliance-note">
-            <strong>[支持作者]</strong> 本專案接受經由第三方平台的自由贊助，相關行為由第三方平台處理，本程式不接觸亦不儲存您的任何支付數據。
+            <p><strong>[ZH] 支持作者</strong>：本專案接受第三方平台自由贊助，本程式不接觸亦不儲存您的支付數據。</p>
+            <p><strong>[EN] Support</strong>: We accept voluntary donations via 3rd-party platforms. We do not handle your payment data.</p>
+            <p><strong>[JP] サポート</strong>: 外部プラットフォームを通じた支援を受け付けています。支払データは本アプリで保持しません。</p>
         </div>
 
         <footer>
@@ -176,33 +203,53 @@
         const app = urlParams.get('app') || 'General Project';
         const opts = urlParams.get('opt')?.split(',') || [];
 
-        // 渲染 App 名稱
         document.getElementById('display-name').innerText = app.toUpperCase().replace(/_/g, ' ');
         document.querySelectorAll('.app-title-text').forEach(el => el.innerText = app);
 
-        // 選配積木庫 (已移除 SP 判斷，回歸純粹組件宣告)
         const optLibrary = {
-            'notif': '＊權限說明：通知權限僅用於任務完成或到期時之即時提醒，確保背景運作之功能完整性。',
-            'file':  '＊權限說明：存儲權限僅用於本地數據備份與設定讀取，不涉及您的私人媒體檔案。',
-            'noto':  '＊版權聲明：本工具採用之 Noto 系列字型與圖標分別遵循 SIL Open Font License 1.1 規範，技術呈現符合原權利人之版權聲明。',
-            'flu':   '＊技術聲明：本工具基於 Flutter 框架開發，所引用之核心組件分別遵循 BSD、MIT 及 Apache 2.0 等合法商用授權規範，技術架構符合原創作者之版權聲明。',
-            'ray':   '＊技術聲明：本工具基於 Raylib 構建，相關圖形渲染組件遵循 zlib/libpng 等合法商用授權規範，技術架構符合原創作者之版權聲明。',
-            'mit':   '＊授權聲明：本程式部分技術組件遵循 MIT 授權協議，相關引用細節符合原作者之權利要求與商用規範。'
+            'notif': {
+                zh: '＊權限說明：通知權限僅用於任務完成或到期時之即時提醒。',
+                en: '* Permissions: Only used for task completion or expiry reminders.',
+                jp: '* 権限説明: タスク完了または期限切れの即時通知にのみ使用されます。'
+            },
+            'noto': {
+                zh: '＊授權聲明：Noto 系列字型與圖標遵循 SIL OFL 1.1 規範，技術呈現符合原權利人之聲明。',
+                en: '* Licensing: Noto fonts and icons follow SIL OFL 1.1; implementation complies with original terms.',
+                jp: '* ライセンス: Noto フォントとアイコンは SIL OFL 1.1 に準拠し、原著作者の規約に従い表示されます。'
+            },
+            'jan_icon': {
+				zh: '＊原創資產：本程式之專屬圖標由 Origin Logic Team 原創設計，保留所有權利。',
+				en: '* Original Assets: Custom icons designed by Origin Logic Team. All rights reserved.',
+				jp: '* オリジナル資産: 専用アイコンは Origin Logic Team が設計したもので、著作権を保持します。'
+			},
+            'flu': {
+                zh: '＊技術聲明：基於 Flutter 框架開發，核心組件分別遵循 BSD/MIT/Apache 2.0 合法商用授權。',
+                en: '* Tech Stack: Built with Flutter; components follow BSD/MIT/Apache 2.0 commercial licenses.',
+                jp: '* 技術声明: Flutter で構築。コアコンポーネントは BSD/MIT/Apache 2.0 に準拠しています。'
+            },
+            'ray': {
+                zh: '＊技術聲明：基於 Raylib 構建，圖形渲染組件遵循 zlib/libpng 等合法商用授權規範。',
+                en: '* Tech Stack: Built with Raylib; rendering components follow zlib/libpng commercial licenses.',
+                jp: '* 技術声明: Raylib で構築。グラフィックコンポーネントは zlib/libpng に準拠しています。'
+            }
         };
 
         const optContainer = document.getElementById('optional-b1');
 
-        // 如果有選配，增加一個標題區分
         if (opts.length > 0 && opts[0] !== "") {
             const extraTitle = document.createElement('h2');
-            extraTitle.innerText = "03. 其餘組件聲明 | COMPONENTS";
+            extraTitle.innerText = "03. 組件聲明 | COMPONENTS | コンポーネント";
             optContainer.appendChild(extraTitle);
             
             opts.forEach(key => {
                 if (optLibrary[key]) {
                     const div = document.createElement('div');
                     div.className = 'opt-block';
-                    div.innerText = optLibrary[key];
+                    div.innerHTML = `
+                        <p><span class="lang-tag">ZH</span>${optLibrary[key].zh}</p>
+                        <p><span class="lang-tag">EN</span>${optLibrary[key].en}</p>
+                        <p><span class="lang-tag">JP</span>${optLibrary[key].jp}</p>
+                    `;
                     optContainer.appendChild(div);
                 }
             });
