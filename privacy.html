@@ -10,6 +10,7 @@
             --container-bg: #fafafa;
             --ink: #1a1a1a; 
             --accent-blue: #5fb9c3;
+            /* 優先順序：1. 系統內建等寬 2. 系統中文字型 3. 系統日文字型 4. 通用等寬 */
             --font-main: "Courier New", "Noto Sans TC", "Noto Sans JP", monospace;
         }
         
@@ -181,14 +182,14 @@
         <div id="optional-b1"></div>
 
         <div class="compliance-note">
-            <p><strong>[ZH] 授權合規</strong>：本專案引用之資源均經過 License 查核，確保符合商用授權規範。</p>
-            <p><strong>[EN] Compliance</strong>: All resources used in this project have been checked for licenses to ensure commercial compliance.</p>
-            <p><strong>[JP] コンプライアンス</strong>: 本プロジェクトで使用されるリソースは、商用利用のライセンス適合性を確認済みです。</p>
+            <p><strong>[ZH] 授權合規</strong>：本網頁視覺設計建議使用 Noto 系列字型渲染，技術呈現遵循 SIL OFL 1.1 授權規範之美學標準。</p>
+            <p><strong>[EN] Compliance</strong>: Visual design suggests Noto fonts; implementation adheres to SIL OFL 1.1 aesthetic standards.</p>
+            <p><strong>[JP] コンプライアンス</strong>: 本ページのデザインは Noto フォントの使用を推奨し、SIL OFL 1.1 ライセンス規約に従っています。</p>
         </div>
         
         <div class="compliance-note">
             <p><strong>[ZH] 支持作者</strong>：本專案接受第三方平台自由贊助，本程式不接觸亦不儲存您的支付數據。</p>
-            <p><strong>[EN] Support</strong>: We accept voluntary donations via 3rd-party platforms. We do not handle your payment data.</p>
+            <p><strong>[EN] Support</strong>: Voluntary donations accepted via 3rd-party platforms. We do not handle your payment data.</p>
             <p><strong>[JP] サポート</strong>: 外部プラットフォームを通じた支援を受け付けています。支払データは本アプリで保持しません。</p>
         </div>
 
@@ -213,9 +214,9 @@
                 jp: '* 権限説明: タスク完了または期限切れの即時通知にのみ使用されます。'
             },
             'noto': {
-                zh: '＊授權聲明：Noto 系列字型與圖標遵循 SIL OFL 1.1 規範，技術呈現符合原權利人之聲明。',
-                en: '* Licensing: Noto fonts and icons follow SIL OFL 1.1; implementation complies with original terms.',
-                jp: '* ライセンス: Noto フォントとアイコンは SIL OFL 1.1 に準拠し、原著作者の規約に従い表示されます。'
+                zh: '＊技術說明：本程式介面選用之字型與圖標資源均符合 SIL OFL 1.1 商用授權規範。',
+                en: '* Tech Specs: Fonts and icons used in the interface comply with SIL OFL 1.1 commercial licenses.',
+                jp: '* 技術説明: インターフェースで使用されるフォントとアイコンは SIL OFL 1.1 に準拠しています。'
             },
             'jan_icon': {
 				zh: '＊原創資產：本程式之專屬圖標由 Origin Logic Team 原創設計，保留所有權利。',
