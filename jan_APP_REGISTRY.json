@@ -15,9 +15,9 @@
       "u_char": "⚙",
       "u_theme": "olive-green",
       "name": "Sily Listener",
-      "status": "Debuging",
+      "status": "Developing",
       "device": "android",
-      "repo_path": "sily_listener"
+      "repo_path": "sily-tasker"
     }
   ]
 }
